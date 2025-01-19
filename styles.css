@@ -1,7 +1,6 @@
 /* ================================
    1. ROOT VARIABLES
    ================================ */
-
    :root {
     /* ---- Color Palette (3 sets of blues) ---- */
     /* Set 1 */
@@ -52,7 +51,6 @@
   /* ================================
      2. GLOBAL RESETS
      ================================ */
-  
   *,
   *::before,
   *::after {
@@ -90,7 +88,6 @@
   /* ================================
      3. NAVIGATION & HEADER
      ================================ */
-  
   header {
     background-color: var(--nav-bg);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -100,21 +97,21 @@
   .navbar {
     display: flex;
     justify-content: center; /* Centers the navigation links */
-    align-items: center; /* Aligns them vertically */
-    height: 80px; /* Sets a fixed height for the header */
-    background-color: var(--nav-bg); /* Keeps the header background consistent */
+    align-items: center;     /* Aligns them vertically */
+    height: 80px;            /* Sets a fixed height for the header */
+    background-color: var(--nav-bg);
   }
   
   .nav-links {
     display: flex;
-    gap: 2rem; /* Space between each link */
+    gap: 2rem;
     list-style: none;
   }
   
   .nav-links li a {
     font-weight: 500;
     font-size: 1.1rem;
-    text-transform: uppercase; /* Makes the links feel more professional */
+    text-transform: uppercase;
     color: var(--text-color);
     transition: color 0.3s ease;
   }
@@ -124,17 +121,20 @@
     text-decoration: underline;
   }
   
-  
   /* ================================
      4. HERO SECTION
      ================================ */
-  
   .hero {
-    background: 
-      var(--blue2-mid1)
-    ;
+    background: var(--blue2-mid1);
     text-align: center;
     padding: 4rem 0 3rem 0;
+  }
+  
+  .hero-logo {
+    max-width: 300px; /* Adjust as needed */
+    width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
   }
   
   .hero h1 {
@@ -147,7 +147,7 @@
   .hero .tagline {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: var(--blue1-dark1); /* #408EA6 */
+    color: var(--blue1-dark1);
   }
   
   .cta-button {
@@ -168,19 +168,18 @@
   /* ================================
      5. WHO WE ARE SECTION
      ================================ */
-  
   .who-we-are {
     padding: var(--section-padding) 0;
     text-align: center;
-    background-color: var(--blue2-lightest); /* #D3EDFA - subtle contrast */
-    border-top: 1px solid var(--blue1-mid2);  /* #54B6D5 */
+    background-color: var(--blue2-lightest); /* #D3EDFA */
+    border-top: 1px solid var(--blue1-mid2);
     border-bottom: 1px solid var(--blue1-mid2);
   }
   
   .who-we-are h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: var(--blue1-dark2); /* #1B4451 */
+    color: var(--blue1-dark2);
   }
   
   .who-we-are p {
@@ -196,6 +195,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2rem;
+    align-items: start; /* ensure text aligns properly with images */
+  }
+  
+  .who-we-are-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
   }
   
   .person {
@@ -227,7 +233,6 @@
   /* ================================
      6. OUR MISSION SECTION
      ================================ */
-  
   .our-mission {
     padding: var(--section-padding) 0;
     text-align: center;
@@ -276,7 +281,6 @@
   /* ================================
      7. OUR SOLUTIONS SECTION
      ================================ */
-  
   .our-solutions {
     padding: var(--section-padding) 0;
     text-align: center;
@@ -341,7 +345,6 @@
   /* ================================
      8. CONTACT SECTION
      ================================ */
-  
   .contact {
     padding: var(--section-padding) 0;
     text-align: center;
@@ -375,7 +378,6 @@
   /* ================================
      9. FOOTER
      ================================ */
-  
   .footer {
     text-align: center;
     padding: 2rem 0;
@@ -386,4 +388,53 @@
   .footer p {
     font-size: 0.9rem;
     opacity: 0.8;
+  }
+  
+  /* ================================
+     10. RESPONSIVE MEDIA QUERIES
+     ================================ */
+  @media (max-width: 768px) {
+    /* NAVBAR: Stack links vertically */
+    .navbar {
+      flex-direction: column;
+      height: auto;
+      padding: 1rem 0;
+    }
+    .nav-links {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    /* HERO: Reduce overall padding & scale text */
+    .hero {
+      padding: 2rem 0;
+    }
+    .hero h1 {
+      font-size: 2rem; /* from 2.5rem */
+    }
+    .hero .tagline {
+      font-size: 1rem; /* from 1.2rem */
+    }
+  
+    /* WHO WE ARE / OUR MISSION / OUR SOLUTIONS / CONTACT:
+       reduce section padding */
+    .who-we-are,
+    .our-mission,
+    .our-solutions,
+    .contact {
+      padding: 2rem 0;
+    }
+    .who-we-are h2,
+    .our-mission h2,
+    .our-solutions h2,
+    .contact h2 {
+      font-size: 1.5rem; /* from 2rem */
+    }
+  
+    /* SOLUTION CARDS: let them go full width */
+    .solution-card {
+      width: 100%;
+      max-width: 350px; /* optional maximum */
+      margin: 0 auto;
+    }
   }  
