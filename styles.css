@@ -1,191 +1,389 @@
-/*
-  EDUBA Landing Page – Minimal, modern interface
-  Using your brand color sets (light/dark blues) + a bright hero
-*/
+/* ================================
+   1. ROOT VARIABLES
+   ================================ */
 
-/* 1. Basic Reset & Body */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif; /* If you have custom fonts, load them above & replace here */
-  background-color: #E2F4FC; /* Soft light blue from your palette */
-  color: #0B232B; /* Dark text color */
-  line-height: 1.5;
-}
-
-/* 2. Navbar */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #1B4451; /* Dark navy from your palette */
-  padding: 1rem 2rem;
-}
-
-.nav-brand {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  height: 40px;
-  width: auto;
-  margin-right: 0.75rem;
-}
-
-.brand-text {
-  color: #E2F4FC; /* Light text */
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.nav-tagline {
-  color: #94DBF6; /* Mid-tone from your palette */
-  font-style: italic;
-  font-size: 1rem;
-}
-
-/* 3. Hero Section */
-.hero-section {
-  background: linear-gradient(135deg, #2D687A, #1B4451); 
-  /* Alternatively, add a background image: url("images/hero-bg.jpg") center/cover no-repeat, etc. */
-  color: #E2F4FC; /* Light text on dark background */
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-}
-
-.hero-content {
-  max-width: 600px;
-}
-
-.hero-title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-/* CTA Button (Hero) */
-.btn-cta {
-  display: inline-block;
-  background-color: #54B6D5; /* from your blues palette */
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.btn-cta:hover {
-  background-color: #408EA6; /* Slightly darker on hover */
-}
-
-/* 4. Generic Section Styles */
-.section {
-  padding: 3rem 1rem;
-}
-
-.section-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 1.25rem;
-  color: #0B232B;
-}
-
-.section-text {
-  margin-bottom: 1rem;
-  color: #2D687A;
-  line-height: 1.6;
-}
-
-/* 5. Tools Section */
-.tools-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.tool-card {
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 1.5rem;
-  text-align: left;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.tool-card h3 {
-  margin-bottom: 0.5rem;
-  color: #0B232B;
-}
-
-/* Secondary Button for Tools */
-.btn-secondary {
-  display: inline-block;
-  margin-top: 1rem;
-  background-color: #54B6D5;
-  color: #fff;
-  padding: 0.65rem 1.3rem;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: #408EA6;
-}
-
-/* 6. Footer */
-.footer-section {
-  background-color: #1B4451;
-  text-align: center;
-  padding: 2rem 1rem;
-  color: #E2F4FC; 
-}
-
-.footer-content {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.footer-text {
-  margin-bottom: 0.5rem;
-}
-
-.footer-link {
-  color: #E2F4FC;
-  text-decoration: underline;
-}
-
-.footer-link:hover {
-  text-decoration: none;
-}
-
-/* 7. Responsive Tweaks */
-@media (max-width: 768px) {
-  .hero-title {
+   :root {
+    /* ---- Color Palette (3 sets of blues) ---- */
+    /* Set 1 */
+    --blue1-lightest: #E2F4FC;
+    --blue1-mid1: #94DBF6;
+    --blue1-mid2: #54B6D5;
+    --blue1-mid3: #408EA6;
+    --blue1-dark1: #2D687A;
+    --blue1-dark2: #1B4451;
+    --blue1-dark3: #0B232B;
+  
+    /* Set 2 */
+    --blue2-lightest: #D3EDFA;
+    --blue2-mid1: #66CEF1;
+    --blue2-mid2: #51A5C1;
+    --blue2-mid3: #3C7D94;
+    --blue2-dark1: #285869;
+    --blue2-dark2: #163641;
+    --blue2-dark3: #06171C;
+  
+    /* Set 3 */
+    --blue3-lightest: #BCE7FA;
+    --blue3-mid1: #58C6E8;
+    --blue3-mid2: #449EB9;
+    --blue3-mid3: #32778B;
+    --blue3-dark1: #205261;
+    --blue3-dark2: #10303A;
+    --blue3-dark3: #041318;
+  
+    /* ---- Brand / UI Colors ---- */
+    --body-bg: var(--blue2-mid1); /* #E2F4FC */
+    --nav-bg: var(--blue1-lightest);
+    --text-color: var(--blue1-dark3); /* #0B232B */
+    --accent-color: var(--blue2-mid3); /* #3C7D94 */
+    --accent-color-hover: var(--blue1-mid3); /* #408EA6 */
+    --card-bg: #ffffff; /* White cards */
+  
+    /* ---- Typography ---- */
+    --font-primary: "Inter", sans-serif;
+    --heading-font-size: 2.5rem;
+    --paragraph-font-size: 1rem;
+  
+    /* ---- Spacing ---- */
+    --container-padding: 1rem;
+    --section-padding: 3rem;
+  }
+  
+  /* ================================
+     2. GLOBAL RESETS
+     ================================ */
+  
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-primary);
+    font-size: var(--paragraph-font-size);
+    color: var(--text-color);
+    background-color: var(--body-bg);
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--container-padding);
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  
+  /* ================================
+     3. NAVIGATION & HEADER
+     ================================ */
+  
+  header {
+    background-color: var(--nav-bg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: center; /* Centers the navigation links */
+    align-items: center; /* Aligns them vertically */
+    height: 80px; /* Sets a fixed height for the header */
+    background-color: var(--nav-bg); /* Keeps the header background consistent */
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem; /* Space between each link */
+    list-style: none;
+  }
+  
+  .nav-links li a {
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-transform: uppercase; /* Makes the links feel more professional */
+    color: var(--text-color);
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+  }
+  
+  
+  /* ================================
+     4. HERO SECTION
+     ================================ */
+  
+  .hero {
+    background: 
+      var(--blue2-mid1)
+    ;
+    text-align: center;
+    padding: 4rem 0 3rem 0;
+  }
+  
+  .hero h1 {
+    font-size: var(--heading-font-size);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+  }
+  
+  .hero .tagline {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--blue1-dark1); /* #408EA6 */
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: var(--accent-color-hover);
+    transform: translateY(-3px);
+  }
+  
+  /* ================================
+     5. WHO WE ARE SECTION
+     ================================ */
+  
+  .who-we-are {
+    padding: var(--section-padding) 0;
+    text-align: center;
+    background-color: var(--blue2-lightest); /* #D3EDFA - subtle contrast */
+    border-top: 1px solid var(--blue1-mid2);  /* #54B6D5 */
+    border-bottom: 1px solid var(--blue1-mid2);
+  }
+  
+  .who-we-are h2 {
     font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--blue1-dark2); /* #1B4451 */
   }
-  .hero-subtitle {
+  
+  .who-we-are p {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: var(--blue1-dark3);
+  }
+  
+  /* Team Grid */
+  .who-we-are-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+  }
+  
+  .person {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .person h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--blue1-dark2);
+  }
+  
+  .person ul {
+    padding-left: 1.2rem;
+    list-style: disc;
+  }
+  
+  .person ul li {
+    margin-bottom: 0.5rem;
+    color: var(--blue1-dark3);
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  /* ================================
+     6. OUR MISSION SECTION
+     ================================ */
+  
+  .our-mission {
+    padding: var(--section-padding) 0;
+    text-align: center;
+  }
+  
+  .our-mission h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--blue1-dark2);
+  }
+  
+  .our-mission p {
+    max-width: 750px;
+    margin: 0 auto 1.5rem auto;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: var(--blue1-dark3);
+  }
+  
+  .mission-points {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 0;
+    text-align: left;
+    max-width: 750px;
+    margin: 0 auto 1.5rem auto;
+  }
+  
+  .mission-points li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--blue1-dark3);
     font-size: 1rem;
+    line-height: 1.6;
   }
-  .tools-grid {
-    grid-template-columns: 1fr;
+  
+  .mission-points li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    color: var(--accent-color);
   }
-}
+  
+  /* ================================
+     7. OUR SOLUTIONS SECTION
+     ================================ */
+  
+  .our-solutions {
+    padding: var(--section-padding) 0;
+    text-align: center;
+  }
+  
+  .our-solutions h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--blue1-dark2);
+  }
+  
+  .solutions-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .solution-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .solution-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .solution-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--blue2-mid2); /* #51A5C1 */
+  }
+  
+  .solution-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    color: var(--blue1-dark3);
+  }
+  
+  .solution-button {
+    display: inline-block;
+    background: var(--accent-color);
+    color: #ffffff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .solution-button:hover {
+    background-color: var(--accent-color-hover);
+    transform: translateY(-3px);
+  }
+  
+  /* ================================
+     8. CONTACT SECTION
+     ================================ */
+  
+  .contact {
+    padding: var(--section-padding) 0;
+    text-align: center;
+  }
+  
+  .contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--blue1-dark2);
+  }
+  
+  .contact p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: var(--blue1-dark3);
+  }
+  
+  .contact a {
+    color: var(--accent-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .contact a:hover {
+    color: var(--accent-color-hover);
+    text-decoration: underline;
+  }
+  
+  /* ================================
+     9. FOOTER
+     ================================ */
+  
+  .footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid var(--blue1-mid2);
+  }
+  
+  .footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }  
