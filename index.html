@@ -19,29 +19,16 @@
 <body>
 <header>
   <nav class="navbar container">
-    <!-- Optional Logo or Brand Name -->
-    <div class="brand">
-      <!-- If you have a small brand logo, you can place it here -->
-      <!-- <img src="images/eduba-logo.png" alt="Brand Logo" class="brand-logo" /> -->
-      <span>EDUBA</span>
-    </div>
-
-    <!-- Hamburger Checkbox Hack -->
-    <input type="checkbox" id="menu-toggle" />
-    <label for="menu-toggle" class="menu-icon">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-
+    <!-- Navigation Links -->
     <ul class="nav-links">
-      <li><a href="#who-we-are">Who We Are</a></li>
-      <li><a href="#our-mission">Our Mission</a></li>
-      <li><a href="#our-solutions">Learning Resources</a></li>
+      <li><a href="#who-we-are">Who we are</a></li>
+      <li><a href="#our-mission">Our mission</a></li>
+      <li><a href="#our-solutions">Learning resources</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 </header>
+
 
 <!-- HERO SECTION -->
 <section class="hero container">
@@ -51,11 +38,77 @@
     alt="EDUBA Logo" 
     class="hero-logo"
   />
-  <p class="tagline">Empowering educators to shape technology—not be shaped by it</p>
-  <a class="cta-button" href="#our-mission">Our Mission</a>
+  <p class="tagline"><em>Empowering educators to shape technology—not be shaped by it</em></p>
 </section>
 
-<!-- ========== WHO WE ARE SECTION ========== -->
+<!-- ===== MOVED UP: OUR MISSION SECTION ===== -->
+<section id="our-mission" class="our-mission container">
+  <h2>Our Mission</h2>
+  <p>
+    Our mission is more than just tech; it’s about fostering a deeper understanding of the history, philosophy, and innovation within education and finding where they converge to shape the future of education.
+  </p>
+  <p>
+    Through interactive labs and collaborative sessions, we invite educators to engage in shaping educational technology, exploring their own ideas and concepts alongside us.
+  </p>
+  <p><strong>Together, we aim to:</strong></p>
+  <ul class="mission-points">
+    <li>Develop Educational Technology that enhances—never replaces—the role of teachers.</li>
+    <li>Foster creativity, collaboration, and critical thinking as the foundation of modern education</li>
+    <li>Ensure seamless integration of technology for real-world classrooms.</li>
+  </ul>
+  <p>
+    We believe in a future where educators lead the way, using technology to uplift both their teaching and their students, opening new frontiers of learning and discovery.
+  </p>
+</section>
+
+<!-- ===== MOVED UP: LEARNING RESOURCES SECTION ===== -->
+<section id="our-solutions" class="our-solutions container">
+  <h2>Learning Resources</h2>
+  <div class="solutions-list">
+    <!-- Solution Card 1 -->
+    <article class="solution-card">
+      <h3>Generative UI</h3>
+      <p>A Proof of Concept for testing and exploring the next generation of user interfaces.</p>
+      <a
+        href="https://dynamic-ui.azurewebsites.net/dashboard"
+        class="solution-button"
+        target="_blank"
+      >
+        Launch
+      </a>
+    </article>
+
+    <!-- Solution Card 2 -->
+    <article class="solution-card">
+      <h3>Collaborative Chat</h3>
+      <p>Real-time chat environment for exploring and testing multiple LLMs and collaboration workflows.</p>
+      <a
+        href="https://nice-wave-0533cdb0f.4.azurestaticapps.net/login"
+        class="solution-button"
+        target="_blank"
+      >
+        Start Chat
+      </a>
+    </article>
+
+    <!-- Solution Card 3 -->
+    <article class="solution-card">
+      <h3>AI & Future Blog</h3>
+      <p>
+        Exploring Jake's current research through easy to read blog form.
+      </p>
+      <a
+        href="https://blogs.ed.ac.uk/s2670773_future-governance-kipp--futures-project-2024-25/"
+        class="solution-button"
+        target="_blank"
+      >
+        Read Blog
+      </a>
+    </article>
+  </div>
+</section>
+
+<!-- ===== MOVED DOWN: WHO WE ARE SECTION ===== -->
 <section id="who-we-are" class="who-we-are container">
   <h2>Who We Are</h2>
   <p>
@@ -140,74 +193,7 @@
   </div>
 </section>
 
-<!-- ========== OUR MISSION SECTION ========== -->
-<section id="our-mission" class="our-mission container">
-  <h2>Our Mission</h2>
-  <p>
-    Our mission is more than just tech; it’s about fostering a deeper understanding of the history, philosophy, and innovation within education and finding where they converge to shape the future of education.
-  </p>
-  <p>
-    Through interactive labs and collaborative sessions, we invite educators to engage in shaping educational technology, exploring their own ideas and concepts alongside us. 
-  </p>
-  <p>Together, we aim to:</p>
-  <ul class="mission-points">
-    <li>Develop Educational Technology that enhances—never replaces—the role of teachers.</li>
-    <li>Foster creativity, collaboration, and critical thinking as the foundation of modern education</li>
-    <li>Ensure seamless integration of technology for real-world classrooms.</li>
-  </ul>
-  <p>
-    We believe in a future where educators lead the way, using technology to uplift both their teaching and their students, opening new frontiers of learning and discovery.
-  </p>
-</section>
-
-<!-- ========== OUR SOLUTIONS SECTION ========== -->
-<section id="our-solutions" class="our-solutions container">
-  <h2>Learning Resources</h2>
-  <div class="solutions-list">
-    <!-- Solution Card 1 -->
-    <article class="solution-card">
-      <h3>Generative UI</h3>
-      <p>A Proof of Concept for testing and exploring the next generation of user interfaces.</p>
-      <a
-        href="https://dynamic-ui.azurewebsites.net/dashboard"
-        class="solution-button"
-        target="_blank"
-      >
-        Launch
-      </a>
-    </article>
-
-    <!-- Solution Card 2 -->
-    <article class="solution-card">
-      <h3>Collaborative Chat</h3>
-      <p>Real-time chat environment for exploring and testing multiple LLMs and collaboration workflows.</p>
-      <a
-        href="https://nice-wave-0533cdb0f.4.azurestaticapps.net/login"
-        class="solution-button"
-        target="_blank"
-      >
-        Start Chat
-      </a>
-    </article>
-
-    <!-- Solution Card 3 -->
-    <article class="solution-card">
-      <h3>AI & Future Blog</h3>
-      <p>
-        Exploring Jake's current research through easy to read blog form.
-      </p>
-      <a
-        href="https://blogs.ed.ac.uk/s2670773_future-governance-kipp--futures-project-2024-25/"
-        class="solution-button"
-        target="_blank"
-      >
-        Read Blog
-      </a>
-    </article>
-  </div>
-</section>
-
-<!-- ========== CONTACT SECTION ========== -->
+<!-- CONTACT SECTION (unchanged) -->
 <section id="contact" class="contact container">
   <h2>Contact</h2>
   <p>
@@ -216,7 +202,7 @@
   </p>
 </section>
 
-<!-- ========== FOOTER ========== -->
+<!-- FOOTER (unchanged) -->
 <footer class="footer container">
   <p>© 2025 EDUBA – The faces of interfaces</p>
 </footer>
