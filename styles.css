@@ -1,154 +1,229 @@
-/* Font Imports */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* ------------------------------ */
+/* 1. FONT-FACE DECLARATIONS      */
+/* (Replace with your actual font files or remove if not available) */
+/* ------------------------------ */
 
-/* Simple Reset */
-* {
+@font-face {
+    font-family: "Made Saonara 2";
+    src: url("fonts/MadeSaonara2-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Made Saonara";
+    src: url("fonts/MadeSaonara-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Inter";
+    src: url("fonts/Inter-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  /* ------------------------------ */
+  /* 2. BASIC RESETS                */
+  /* ------------------------------ */
+  
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -0.08em; /* Matching the -8% kerning specification */
-}
-
-/* Custom Properties for Brand Colors */
-:root {
-    --eduba-light: #E2F4FC;
-    --eduba-primary: #54B6D5;
-    --eduba-secondary: #408EA6;
-    --eduba-dark: #2D687A;
-    --eduba-darker: #1B4451;
-    --eduba-darkest: #0B232B;
-}
-
-/* Navbar */
-.navbar {
-    background-color: var(--eduba-darkest);
-    color: var(--eduba-light);
-    padding: 1rem;
-    text-align: left;
-}
-
-.navbar .logo {
-    font-family: "Made Saonara 2", serif; /* Using the specified brand font */
-    font-size: 1.25rem;
-    font-weight: bold;
-    letter-spacing: 0; /* Matching the 0% kerning specification for Made Saonara 2 */
-}
-
-/* Hero Section */
-.hero-section {
+  }
+  
+  /* Adjust the default kerning/letter-spacing as per your requirement */
+  body {
+    font-family: "Inter", sans-serif;
+    letter-spacing: -0.08em; /* approximate for -8% kerning, adjust if needed */
+    color: #0B232B; /* Primary dark color from Set 1 */
+    background-color: #E2F4FC; /* Very soft blue from Set 1 as page background */
+    line-height: 1.5;
+  }
+  
+  /* Headings in "Made Saonara" or "Made Saonara 2" with special letter-spacing */
+  h1, h2, h3, .brand-text {
+    font-family: "Made Saonara", serif;
+    letter-spacing: -0.08em;
+  }
+  
+  /* ------------------------------ */
+  /* 3. NAVIGATION                  */
+  /* ------------------------------ */
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1B4451; /* mid-dark shade from Set 1 */
+    padding: 1rem 2rem;
+  }
+  
+  .nav-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 40px;
+    width: auto;
+    margin-right: 0.75rem;
+  }
+  
+  .brand-text {
+    color: #E2F4FC;
+    font-size: 1.5rem;
+  }
+  
+  .nav-tagline {
+    color: #94DBF6; /* mid tone from Set 1 */
+    font-size: 1rem;
+    font-style: italic;
+  }
+  
+  /* ------------------------------ */
+  /* 4. HERO SECTION                */
+  /* ------------------------------ */
+  
+  .hero-section {
+    background: #0B232B url("images/hero-bg.jpg") center/cover no-repeat;
+    /* fallback color if image not found: */
+    background-color: #0B232B;
+    color: #E2F4FC;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70vh;
-    background: linear-gradient(135deg, var(--eduba-dark), var(--eduba-darkest));
-    color: var(--eduba-light);
     text-align: center;
-}
-
-.hero-content {
+    padding: 2rem;
+  }
+  
+  .hero-content {
     max-width: 600px;
-}
-
-.hero-content h1 {
-    font-family: "Made Saonara", serif;
+  }
+  
+  .hero-title {
+    font-family: "Made Saonara 2", serif;
+    letter-spacing: 0em; /* for Made Saonara 2 */
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    letter-spacing: -0.08em; /* Matching the -8% kerning specification */
-}
-
-.hero-content p {
+  }
+  
+  .hero-subtitle {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-}
-
-.hero-content .btn {
-    background-color: var(--eduba-primary);
-    color: var(--eduba-light);
+  }
+  
+  .btn-cta {
+    background-color: #54B6D5; /* from Set 1 mid tone */
+    color: #fff;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     border-radius: 5px;
+    font-weight: bold;
     transition: background-color 0.3s ease;
-}
-
-.hero-content .btn:hover {
-    background-color: var(--eduba-secondary);
-}
-
-/* Section Styles */
-.section {
+  }
+  
+  .btn-cta:hover {
+    background-color: #408EA6; /* darker hover effect */
+  }
+  
+  /* ------------------------------ */
+  /* 5. SECTIONS                    */
+  /* ------------------------------ */
+  
+  .section {
     padding: 3rem 1rem;
-    background-color: var(--eduba-light);
-}
-
-.section h2 {
-    font-family: "Made Saonara", serif;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--eduba-darkest);
-    letter-spacing: -0.08em;
-}
-
-.section p, 
-.section li {
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    color: var(--eduba-darker);
-}
-
-.section-content {
+  }
+  
+  .section-content {
     max-width: 800px;
     margin: 0 auto;
-    text-align: left;
-}
-
-/* Team Grid */
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.team-member {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(11, 35, 43, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.team-member:hover {
-    transform: translateY(-5px);
-}
-
-.team-member h3 {
+  }
+  
+  .section-title {
     font-family: "Made Saonara", serif;
-    margin-bottom: 0.5rem;
-    color: var(--eduba-dark);
-    letter-spacing: -0.08em;
-}
-
-/* Footer */
-.footer-section {
-    background-color: var(--eduba-darkest);
-    color: var(--eduba-light);
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+    color: #0B232B;
+  }
+  
+  .section-text {
+    margin-bottom: 1rem;
+    font-family: "Inter", sans-serif;
+    color: #0B232B;
+  }
+  
+  .section-text.highlight {
+    font-weight: bold;
+    color: #1B4451; /* medium-dark blue for emphasis */
+  }
+  
+  /* ------------------------------ */
+  /* 6. EXPLORATION TOOL SECTION    */
+  /* ------------------------------ */
+  
+  .exploration-section {
+    background-color: #94DBF6; /* lighter mid tone from Set 1 for contrast */
+  }
+  
+  .exploration-section .section-title,
+  .exploration-section .section-text {
+    color: #0B232B; 
+  }
+  
+  .btn-secondary {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #3C7D94; /* from Set 2 maybe */
+    color: #fff;
+    padding: 0.65rem 1.3rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #285869; /* darker shade from Set 2 */
+  }
+  
+  /* ------------------------------ */
+  /* 7. FOOTER                      */
+  /* ------------------------------ */
+  
+  .footer-section {
     text-align: center;
     padding: 2rem 1rem;
-}
-
-.footer-content p {
-    margin-bottom: 0.5rem;
-    opacity: 0.9;
-}
-
-/* Responsive Design Enhancements */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2rem;
+    background-color: #1B4451;
+  }
+  
+  .footer-text {
+    color: #E2F4FC;
+    font-size: 0.9rem;
+  }
+  
+  /* ------------------------------ */
+  /* 8. RESPONSIVE TWEAKS           */
+  /* ------------------------------ */
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      text-align: center;
     }
-    
-    .section h2 {
-        font-size: 1.75rem;
+  
+    .nav-tagline {
+      margin-top: 0.5rem;
     }
-}
+  
+    .hero-section {
+      height: auto;
+      padding: 4rem 1rem;
+    }
+  
+    .hero-title {
+      font-size: 2rem;
+    }
+  }  
