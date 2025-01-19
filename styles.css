@@ -1,107 +1,154 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 /* Simple Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
-  }
-  
-  /* Navbar */
-  .navbar {
-    background-color: #333;
-    color: #fff;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.08em; /* Matching the -8% kerning specification */
+}
+
+/* Custom Properties for Brand Colors */
+:root {
+    --eduba-light: #E2F4FC;
+    --eduba-primary: #54B6D5;
+    --eduba-secondary: #408EA6;
+    --eduba-dark: #2D687A;
+    --eduba-darker: #1B4451;
+    --eduba-darkest: #0B232B;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--eduba-darkest);
+    color: var(--eduba-light);
     padding: 1rem;
     text-align: left;
-  }
-  
-  .navbar .logo {
+}
+
+.navbar .logo {
+    font-family: "Made Saonara 2", serif; /* Using the specified brand font */
     font-size: 1.25rem;
     font-weight: bold;
-  }
-  
-  /* Hero Section */
-  .hero-section {
+    letter-spacing: 0; /* Matching the 0% kerning specification for Made Saonara 2 */
+}
+
+/* Hero Section */
+.hero-section {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 70vh;
-    background: url('images/placeholder-hero.jpg') center/cover no-repeat;
-    /* If you don’t have a hero image yet, you can just pick a background-color instead */
-    background-color: #555; /* fallback if image doesn't load */
-    color: #fff;
+    background: linear-gradient(135deg, var(--eduba-dark), var(--eduba-darkest));
+    color: var(--eduba-light);
     text-align: center;
-  }
-  
-  .hero-content {
+}
+
+.hero-content {
     max-width: 600px;
-  }
-  
-  .hero-content h1 {
+}
+
+.hero-content h1 {
+    font-family: "Made Saonara", serif;
     font-size: 2.5rem;
     margin-bottom: 1rem;
-  }
-  
-  .hero-content p {
+    letter-spacing: -0.08em; /* Matching the -8% kerning specification */
+}
+
+.hero-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-  }
-  
-  .hero-content .btn {
-    background-color: #008CBA;
-    color: #fff;
+}
+
+.hero-content .btn {
+    background-color: var(--eduba-primary);
+    color: var(--eduba-light);
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     border-radius: 5px;
-  }
-  
-  /* Section Styles */
-  .section {
+    transition: background-color 0.3s ease;
+}
+
+.hero-content .btn:hover {
+    background-color: var(--eduba-secondary);
+}
+
+/* Section Styles */
+.section {
     padding: 3rem 1rem;
-  }
-  
-  .section h2 {
+    background-color: var(--eduba-light);
+}
+
+.section h2 {
+    font-family: "Made Saonara", serif;
     font-size: 2rem;
     margin-bottom: 1rem;
-  }
-  
-  .section p, 
-  .section li {
+    color: var(--eduba-darkest);
+    letter-spacing: -0.08em;
+}
+
+.section p, 
+.section li {
     line-height: 1.6;
     margin-bottom: 1rem;
-  }
-  
-  .section-content {
+    color: var(--eduba-darker);
+}
+
+.section-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: left;
-  }
-  
-  /* Team Grid */
-  .team-grid {
+}
+
+/* Team Grid */
+.team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
-  }
-  
-  .team-member {
-    background-color: #f8f8f8;
-    padding: 1rem;
+}
+
+.team-member {
+    background-color: white;
+    padding: 1.5rem;
     border-radius: 5px;
-  }
-  
-  .team-member h3 {
+    box-shadow: 0 2px 4px rgba(11, 35, 43, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-member h3 {
+    font-family: "Made Saonara", serif;
     margin-bottom: 0.5rem;
-  }
-  
-  /* Footer */
-  .footer-section {
-    background-color: #333;
-    color: #fff;
+    color: var(--eduba-dark);
+    letter-spacing: -0.08em;
+}
+
+/* Footer */
+.footer-section {
+    background-color: var(--eduba-darkest);
+    color: var(--eduba-light);
     text-align: center;
     padding: 2rem 1rem;
-  }
-  
-  .footer-content p {
+}
+
+.footer-content p {
     margin-bottom: 0.5rem;
-  }  
+    opacity: 0.9;
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .section h2 {
+        font-size: 1.75rem;
+    }
+}
