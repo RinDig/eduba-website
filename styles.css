@@ -416,97 +416,110 @@
     opacity: 0.8;
   }
   
-  /* ================================
-     10. RESPONSIVE MEDIA QUERIES
-     ================================ */
-  
-  /* -- Tablet & Down -- */
-  @media (max-width: 992px) {
-    .hero {
-      padding: 3rem 0;
-    }
-    .hero .tagline {
-      font-size: 1.1rem;
-    }
+ /* ================================
+   10. RESPONSIVE MEDIA QUERIES
+   ================================ */
+
+/* -- Tablet & Down -- */
+@media (max-width: 992px) {
+  .hero {
+    padding: 3rem 0;
   }
-  
-  /* -- Mobile & Down -- */
-  @media (max-width: 768px) {
-    /* Show hamburger icon, hide nav by default */
-    .menu-icon {
-      display: block;
-    }
-  
-    .nav-links {
-      position: absolute;
-      top: 80px; /* align below header */
-      right: 0;
-      background: var(--nav-bg);
-      flex-direction: column;
-      width: 100%;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease-out;
-      gap: 1rem;
-      padding: 0 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-  
-    .nav-links li {
-      margin: 1rem 0;
-    }
-  
-    /* When checkbox is checked, show nav */
-    #menu-toggle:checked ~ .nav-links {
-      max-height: 500px; /* big enough to show all links */
-      padding-bottom: 1rem;
-    }
-  
-    /* Transform hamburger into X when open */
-    #menu-toggle:checked + .menu-icon span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-    #menu-toggle:checked + .menu-icon span:nth-child(2) {
-      opacity: 0;
-    }
-    #menu-toggle:checked + .menu-icon span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-  
-    /* Adjust hero spacing */
-    .hero {
-      padding: 2rem 0;
-    }
-    .hero .tagline {
-      font-size: 1rem;
-    }
-  
-    .who-we-are,
-    .our-mission,
-    .our-solutions,
-    .contact {
-      padding: 2rem 0;
-    }
-    .who-we-are h2,
-    .our-mission h2,
-    .our-solutions h2,
-    .contact h2 {
-      font-size: 1.5rem;
-    }
-  
-    .solution-card {
-      width: 100%;
-      max-width: 350px;
-      margin: 0 auto;
-    }
+  .hero .tagline {
+    font-size: 1.1rem;
   }
-  
-  /* -- Very Small Screens -- */
-  @media (max-width: 480px) {
-    .hero-logo {
-      max-width: 220px;
-    }
-    .hero .tagline {
-      font-size: 0.95rem;
-    }
-  }  
+}
+
+/* -- Mobile & Down -- */
+@media (max-width: 768px) {
+  /* Show hamburger icon, hide nav by default */
+  .menu-icon {
+    display: block;
+  }
+  /* Make sure hamburger lines are visible against nav background */
+  .menu-icon span {
+    background: var(--blue2-lightest); /* so bars are light on dark nav bg */
+    border-radius: 2px;
+    display: block;
+    height: 3px;
+    margin: 5px 0;
+    transition: 0.4s;
+    width: 100%;
+  }
+
+  /* Mobile nav links container */
+  .nav-links {
+    position: absolute;
+    top: 80px; /* align below header */
+    right: 0;
+    background: var(--nav-bg);
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    gap: 1rem;
+    padding: 0 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+  }
+
+  /* When checkbox is checked, show nav */
+  #menu-toggle:checked ~ .nav-links {
+    max-height: 500px; /* big enough to show all links */
+    padding-bottom: 1rem;
+  }
+
+  /* Transform hamburger into X when open */
+  #menu-toggle:checked + .menu-icon span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  #menu-toggle:checked + .menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+  #menu-toggle:checked + .menu-icon span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Adjust hero spacing */
+  .hero {
+    padding: 2rem 0;
+  }
+  .hero .tagline {
+    font-size: 1rem;
+  }
+
+  /* Section paddings: Who We Are, Mission, Solutions, Contact */
+  .who-we-are,
+  .our-mission,
+  .our-solutions,
+  .contact {
+    padding: 2rem 0;
+  }
+  .who-we-are h2,
+  .our-mission h2,
+  .our-solutions h2,
+  .contact h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Solutions card responsive width */
+  .solution-card {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
+
+/* -- Very Small Screens -- */
+@media (max-width: 480px) {
+  .hero-logo {
+    max-width: 220px;
+  }
+  .hero .tagline {
+    font-size: 0.95rem;
+  }
+}
