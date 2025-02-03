@@ -2,76 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="EDUBA – Empowering Educators with AI" />
+  <meta name="description" content="EDUBA – Empowering Educators" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>EDUBA – Empowering Educators</title>
-
-  <!-- Google Fonts (Inter) -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Main Stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header>
-  <nav class="navbar container">
-    <!-- 1) Hidden Checkbox -->
-    <input type="checkbox" id="menu-toggle" />
+  <header>
+    <nav class="navbar container">
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <ul class="nav-links">
+        <li><a href="#who-we-are">Who we are</a></li>
+        <li><a href="#our-mission">Our mission</a></li>
+        <li><a href="#our-solutions">Learning resources</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- 2) Label with "bars" -->
-    <label for="menu-toggle" class="menu-icon">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
+  <!-- Hero Section -->
+  <section class="hero container">
+    <img src="images/eduba-logo.png" alt="EDUBA Logo" class="hero-logo" />
+    <p class="tagline"><em>Empowering educators to shape technology—not be shaped by it</em></p>
+  </section>
 
-    <!-- 3) Navigation Links -->
-    <ul class="nav-links">
-      <li><a href="#who-we-are">Who we are</a></li>
-      <li><a href="#our-mission">Our mission</a></li>
-      <li><a href="#our-solutions">Learning resources</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- Main Content -->
+  <main>
+    <section id="our-mission" class="our-mission container">
+      <!-- Origin Story -->
+      <div class="origin-story">
+        <h1>The First Teachers</h1>
+        <p>In ancient Sumer, teachers gathered in places called Eduba's - houses of tablets where they taught students how to press meaning into clay. These weren't just schools. They were spaces where teachers shaped how new tools would change learning forever.</p>
+        <p>We took this name because we believe something simple but powerful: teachers should shape the tools they use. Not through surveys or feedback forms, but through real power to build and change educational technology.</p>
+      </div>
 
-
-<!-- HERO SECTION -->
-<section class="hero container">
-  <!-- Replace the <h1>EDUBA</h1> with an image -->
-  <img 
-    src="images/eduba-logo.png" 
-    alt="EDUBA Logo" 
-    class="hero-logo"
-  />
-  <p class="tagline"><em>Empowering educators to shape technology—not be shaped by it</em></p>
-</section>
-
-<!-- ===== MOVED UP: OUR MISSION SECTION ===== -->
-<section id="our-mission" class="our-mission container">
-  <h2>Our Mission</h2>
-  <p>Inspired by the ancient Sumerian "Eduba" — meaning "House of Tablets," where Mesopotamian scholars gathered to read and write — we believe great technology transcends mere electronics and software
-  </p>
-    <p>
-      It's about cultivating a deeper understanding of educational technology's history, philosophy, and evolution, using these insights to shape the future of learning.
-  </p>
-  <p>
-    Through interactive labs and collaborative sessions, we empower educators to actively participate in developing educational technology, bringing their unique ideas and concepts to life alongside us.
-  </p>
-  <p><strong>Together, we aim to:</strong></p>
-  <ul class="mission-points">
-    <li>Develop Educational Technology that enhances—never replaces—the role of teachers.</li>
-    <li>Foster creativity, collaboration, and critical thinking as the foundation of modern education</li>
-    <li>Ensure seamless integration of technology for real-world classrooms.</li>
-  </ul>
-  <p>
-    We believe in a future where educators lead the way, using technology to uplift both their teaching and their students, opening new frontiers of learning and discovery.
-  </p>
-</section>
+      <!-- Vision & Building -->
+      <div class="vision">
+        <h2>What We're Building</h2>
+        <ul class="building-points">
+          <p class="vision-statement">We're starting with AI because it's changing education faster than any tool since writing itself. Like those first teachers in their houses of tablets, you understand something deeper about learning than any algorithm or app.</p>
+          <li>A place where teachers truly lead</li>
+          <li>Where your classroom wisdom guides how AI and other tools work</li>
+          <li>Where your voice directs what we build and how we build it</li>
+          <li>A new way of building educational technology - one where teachers stand at the helm</li>
+        </ul>
+        
+      </div>
+    </section>
 
 <!-- ===== MOVED UP: LEARNING RESOURCES SECTION ===== -->
 <section id="our-solutions" class="our-solutions container">
